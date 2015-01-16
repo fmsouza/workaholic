@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.workaholic252558" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Workaholic?!</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Marque seus horários no trabalho e descubra o quanto você está trabalhando!
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="fredericoamsouza@gmail.com" href="http://fmsouza.github.io/">
+      Frederico Souza
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -16,4 +16,21 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+
+  <platform name="android">
+    <!-- mdpi -->
+    <icon src="icons/android/mdpi/ic_launcher.png" width="48" height="48" />
+
+    <!-- hdpi -->
+    <icon src="icons/android/hdpi/ic_launcher.png" width="72" height="72" />
+
+    <!-- xhdpi -->
+    <icon src="icons/android/xhdpi/ic_launcher.png" width="96" height="96" />
+
+    <!-- xxhdpi -->
+    <icon src="icons/android/xxhdpi/ic_launcher.png" width="144" height="144" />
+
+    <!-- xxxhdpi -->
+    <icon src="icons/android/xxxhdpi/ic_launcher.png" width="192" height="192" />
+  </platform>
 </widget>

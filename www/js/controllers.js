@@ -27,26 +27,28 @@ angular.module('app.controllers', [])
 })
 
 .controller('HistoryCtrl', function($scope, $rootScope) {
-      $scope.history = $rootScope.data;
 
-      $scope.iAmValue = false;
+    $scope.dezHoras = 36000000;
 
-      $scope.whatIAm = function(){
-        if(!$scope.iAmValue){
-          var tam = $scope.history.length;
-          var total = 0;
-          for(var i=0; i<tam; i++){
+    $scope.oitoHoras = 28800000;
+
+    $scope.seisHoras = 21600000;
+
+    $scope.quatroHoras = 14400000;
+
+    $scope.history = $rootScope.data;
+
+    $scope.iAmValue = false;
+
+    $scope.whatIAm = function(){
+    if(!$scope.iAmValue){
+        var tam = $scope.history.length;
+        var total = 0;
+        for(var i=0; i<tam; i++){
             total += $rootScope.efetivo($scope.history[i]);
-          }
-          console.log(total);
-          var media = total/tam;
-          console.log(media);
-          $scope.iAmValue = media;
         }
-        // 10hs = 36000000
-        // 8hs = 28800000
-        // 6hs = 21600000
-        // 4hs = 14400000
-        return $scope.iAmValue;
-      }
+        $scope.iAmValue = total/tam;
+    }
+    return $scope.iAmValue;
+    }
 });

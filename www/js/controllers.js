@@ -6,14 +6,17 @@ angular.module('app.controllers', [])
 
       $scope.cheguei = function(){
         $scope.dados.chegada = Date.now();
+          $scope.save($scope.dados);
       };
 
       $scope.pausaAlmoco = function(){
         $scope.dados.almoco = Date.now();
+          $scope.save($scope.dados);
       };
 
       $scope.volteiAlmoco = function(){
         $scope.dados.volta_almoco = Date.now();
+          $scope.save($scope.dados);
       };
 
       $scope.fuiEmbora = function(){

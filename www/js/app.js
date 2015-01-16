@@ -43,8 +43,14 @@ angular.module('app', ['ionic', 'app.controllers'])
   };
 
   $rootScope.addData = function(data){
-    data.dmy = $rootScope.parseDate(data.chegada);
-    $rootScope.data.push(data);
+    data.dmy = $rootScope.parseDate(data.chegada); console.log(data);
+    var exists = $rootScope.getData(data.dmy, $rootScope.data); console.log(exists);
+    if(exists<0){
+      $rootScope.data.push(data);
+    }
+    else{
+      $rootScope.data[exists] = data;
+    }
     window.localStorage.setItem('workaholic', JSON.stringify($rootScope.data));
     $rootScope.data = $rootScope.loadData([]);
   };
@@ -56,6 +62,15 @@ angular.module('app', ['ionic', 'app.controllers'])
   $rootScope.today = $rootScope.parseDate(Date.now());
 
   $rootScope.data = $rootScope.loadData([]);
+
+  $rootScope.getData = function(dmy, data){
+    for(var i=0; i<data.length; i++){
+      var item = data[i];
+      console.log(item.dmy + "==0" + dmy + ": " + (item.dmy === dmy));
+      if(item.dmy === dmy) return i;
+    }
+    return -1;
+  };
 
   $rootScope.getTodayData = function(){
     var today = $rootScope.today;

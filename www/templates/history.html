@@ -1,0 +1,22 @@
+<ion-view view-title="History">
+  <ion-content>
+    <div class="holic-or-not">
+      <h1 ng-if="whatIAm()>36000000">Você é um workaholic!</h1>
+      <h1 ng-if="whatIAm()>28800000 && whatIAm()<=36000000">Você é um trabalhador empenhado!</h1>
+      <h1 ng-if="whatIAm()==28800000">Você é um trabalhador pontual!</h1>
+      <h1 ng-if="whatIAm()>21600000 && whatIAm()<28800000">Você é trabalhador preguiçoso!</h1>
+      <h1 ng-if="whatIAm()>14400000 && whatIAm()<=21600000">Você é um estagiário!</h1>
+      <h1 ng-if="whatIAm()<=14400000">Você é um estudante!</h1>
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="item in history">
+        <p><b>{{item.dmy}}</b></p>
+        <p><b>Chegada:</b> {{parseTime(item.chegada)}}</p>
+        <p><b>Pausa para almoço:</b> {{parseTime(item.almoco)}}</p>
+        <p><b>Volta do almoço:</b> {{parseTime(item.volta_almoco)}}</p>
+        <p><b>Saída:</b> {{parseTime(item.saida)}}</p>
+        <p><b>Carga efetiva:</b> {{formatTime(efetivo(item))}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

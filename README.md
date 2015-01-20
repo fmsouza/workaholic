@@ -1,2 +1,0 @@
-# workaholic
-Working time history
